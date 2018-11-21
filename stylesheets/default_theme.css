@@ -1,0 +1,14 @@
+body {
+    background-color: darkslategray;
+    color: azure;
+    font-size: 1.1em;
+}
+h1 {
+    color: aqua;
+}
+#intro {
+    font-size: 1.3em;
+}
+.colorful {
+    color: tomato;
+}

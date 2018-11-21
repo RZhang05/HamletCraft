@@ -1,2 +1,2 @@
 # website
-Test code for a website
+Online portfolio (mainly just for experience)

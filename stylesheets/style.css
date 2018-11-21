@@ -23,7 +23,7 @@ p {
 	color: #ffffff;
 }
 
-@-webkit-keyframes float {
+@keyframes float {
 	0% {
 		box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
 		transform: translatey(0px);
@@ -49,15 +49,19 @@ p {
 }
 
 .avatar {
-	width: 150px;
-	height: 150px;
+	width: 175px;
+	height: 175px;
 	box-sizing: border-box;
 	border: 5px white solid;
 	border-radius: 50%;
 	overflow: hidden;
 	box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
 	transform: translatey(0px);
-	-webkit-animation: float 6s ease-in-out infinite;
+	animation: float 4s ease-in-out infinite;
+}
+
+.avatar:hover {
+	border: 7px #aaaaaa solid;
 }
 
 .avatar img {
@@ -67,8 +71,8 @@ p {
 
 .content {
 	width: 100%;
-	max-width: 600px;
-	padding: 20px 40px;
+	max-width: 100%;
+	padding: 9px 40px;
 	box-sizing: border-box;
 	text-align: center;
 }
@@ -98,6 +102,5 @@ li a:hover {
 }
 
 .active {
-	background-color: #FFF;
-	color: #000;
+	background-color: #aaaaaa;
 }

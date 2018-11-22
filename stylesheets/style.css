@@ -114,6 +114,7 @@ li a:hover {
 }
 
 .content2 {
+	width: 100%;
 	max-width: calc(100%/3);
 	padding: 40px 40px;
 	box-sizing: border-box;
@@ -133,6 +134,10 @@ li a:hover {
 	background-color: #000;
 }
 
+.wrapper {
+	text-align: center;
+}
+
 .button {
 	border-radius: 4px;
 	background-color: #f44336;
@@ -140,7 +145,8 @@ li a:hover {
 	color: #FFF;
 	transition: all 0.4s;
 	cursor: pointer;
-	padding: 15px 32px;
+	padding: 20px;
+	width: 200px;
 	text-align: center;
 	text-decoration: none;
 	font-size: 1.3em;
@@ -149,5 +155,25 @@ li a:hover {
 
 .button span {
 	cursor: pointer;
-	
+	display: inline-block;
+	position: relative;
+	transition: 0.4s;
+}
+
+.button span:after {
+	content: '\21db';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.4px;
+}
+
+.button:hover span {
+	padding-right: 25px;
+}
+
+.button:hover span:after {
+	opacity: 1;
+	right: 0;
 }

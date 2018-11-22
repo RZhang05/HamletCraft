@@ -143,7 +143,7 @@ li a:hover {
 	background-color: #f44336;
 	border: none;
 	color: #FFF;
-	transition: all 0.4s;
+	transition: all 0.5s;
 	cursor: pointer;
 	padding: 20px;
 	width: 200px;
@@ -157,7 +157,7 @@ li a:hover {
 	cursor: pointer;
 	display: inline-block;
 	position: relative;
-	transition: 0.4s;
+	transition: 0.5s;
 }
 
 .button span:after {
@@ -166,7 +166,7 @@ li a:hover {
 	opacity: 0;
 	top: 0;
 	right: -20px;
-	transition: 0.4px;
+	transition: 0.5px;
 }
 
 .button:hover span {

@@ -3,6 +3,7 @@ body, html {
 	margin: 0%;
 	padding: 0%;
 	background: #37414a;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 html {
@@ -23,8 +24,8 @@ h2 {
 	text-align: center;
 }
 
-p {
-	line-height: 0px
+div {
+	color:#FFF;
 }
 
 ul {
@@ -91,6 +92,15 @@ li a:hover {
 	align-items: center;
 }
 
+.container2 {
+	width:100%;
+	height:30%;
+	display:flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
 .avatar {
 	width: 175px;
 	height: 175px;
@@ -103,7 +113,7 @@ li a:hover {
 	animation: float 4s ease-in-out infinite;
 }
 
-.avatar:hover {
+.avatar:hover{
 	border: 7px #aaaaaa solid;
 }
 
@@ -113,16 +123,16 @@ li a:hover {
 }
 
 .content {
-	width: 100%;
-	padding: 9px 40px;
+	width:100%;
+	padding: 9px 10px;
 	box-sizing: border-box;
 	text-align: center;
-	margin-bottom: 25px;
+	margin-bottom: 0;
 }
 
 .content2 {
 	width: 100%;
-	max-width: calc(100%/3);
+	max-width: calc(90%/3);
 	padding: 40px 40px;
 	box-sizing: border-box;
 	text-align: center;

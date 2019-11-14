@@ -105,7 +105,7 @@ li a:hover {
 	width: 175px;
 	height: 175px;
 	box-sizing: border-box;
-	border: 10px #f44336 solid;
+	border: 6px #f44336 solid;
 	border-radius: 50%;
 	overflow: hidden;
 	box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
@@ -114,7 +114,7 @@ li a:hover {
 }
 
 .avatar:hover{
-	border: 7px #aaaaaa solid;
+	border: 7px white solid;
 }
 
 .avatar img {

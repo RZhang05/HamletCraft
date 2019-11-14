@@ -1,2 +1,2 @@
-# website
-Online portfolio (mainly just for experience)
+# CRAFT
+Hamlet Relationship Categorizer

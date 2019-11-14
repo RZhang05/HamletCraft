@@ -87,3 +87,20 @@ p {
 	display: inline-block;
 	width:600px;
 }
+
+.beforeScroll {
+	text-align:left;
+	display: none;
+	width:600px;
+}
+
+.afterScroll {
+	text-align:left;
+	display: inline-block;
+	width:600px;
+}
+
+img {
+	max-width:100%;
+	height:auto;
+}

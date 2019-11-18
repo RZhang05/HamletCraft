@@ -137,14 +137,15 @@ li a:hover {
 	box-sizing: border-box;
 	text-align: center;
 	float: left;
-	color: #f44336;
+	color: #333;
+	background:#f44336;
 	border-width: 1px;
 	border-style: solid;
 	transition-duration: 0.4s;
 }
 
 .content2:hover {
-	background: #f44336;
+	background: #f4b836;
 }
 
 .active {

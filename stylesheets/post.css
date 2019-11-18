@@ -26,6 +26,13 @@ h2 {
 
 h3 {
 	color: black;
+	opacity:0;
+	transition: opacity 1s .25s ease-out;
+	will-change: opacity;
+}
+
+h3.is-visible {
+	opacity: 1;
 }
 
 div {
@@ -95,7 +102,7 @@ p {
 	width:60%;
 	color:black;
 	opacity:0;
-	transition: opacity .5s .25s ease-out;
+	transition: opacity 1s .25s ease-out;
 	will-change: opacity;
 }
 

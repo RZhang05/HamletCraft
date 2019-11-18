@@ -92,20 +92,15 @@ li a:hover {
 p {
     text-align:left;
 	display: inline-block;
-	width:600px;
+	width:60%;
 	color:black;
+	opacity:0;
+	transition: opacity .5s .25s ease-out;
+	will-change: opacity;
 }
 
-.beforeScroll {
-	text-align:left;
-	display: none;
-	width:600px;
-}
-
-.afterScroll {
-	text-align:left;
-	display: inline-block;
-	width:600px;
+p.is-visible {
+	opacity: 1;
 }
 
 img {

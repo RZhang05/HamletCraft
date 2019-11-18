@@ -1,16 +1,32 @@
-$(document).ready(function(){
-    //Take your div into one js variable
-    var div = $("#divToShowHide");
-    //Take the current position (vertical position from top) of your div in the variable
-    var pos = div.position();
-    //Now when scroll event trigger do following
-    $(window).scroll(function () {
-     var windowpos = $(window).scrollTop();
-     //Now if you scroll more than 100 pixels vertically change the class to AfterScroll
-     // I am taking 100px scroll, you can take whatever you need
-     if (windowpos >= (pos.top - 100)) {
-       div.addClass("AfterScroll");
-     }
-     //Note: If you want the content should be shown always once you scroll and do not want to hide it again when go to top agian, no need to write the else part
-   });
+var scroll = window.requestAnimationFrame || function(callback){ window.setTimeout(callback, 1000/60)};
+var elementsToShow = document.getElementsByClassName('content')[0].querySelectorAll('.show-on-scroll');
+console.log(elementsToShow);
+function loop() {
+
+  elementsToShow.forEach(function (element) {
+    if (isElementInViewport(element)) {
+      element.classList.add('is-visible');
+    }
   });
+
+  scroll(loop);
+}
+loop();
+// Helper function from: http://stackoverflow.com/a/7557433/274826
+function isElementInViewport(el) {
+  // special bonus for those using jQuery
+  if (typeof jQuery === "function" && el instanceof jQuery) {
+    el = el[0];
+  }
+  var rect = el.getBoundingClientRect();
+  return (
+    (rect.top <= 0
+      && rect.bottom >= 0)
+    ||
+    (rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.top <= (window.innerHeight || document.documentElement.clientHeight))
+    ||
+    (rect.top >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
+  );
+}

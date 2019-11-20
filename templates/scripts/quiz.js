@@ -41,6 +41,16 @@
     correctAnswer: 4
   }];
 
+  var imgs = ['https://media1.giphy.com/media/4bi9ZFzHhroNrFmSsi/source.gif',
+              'https://media1.giphy.com/media/RZQIIUO9qrTRC/giphy.gif',
+              'https://media1.giphy.com/media/qVIFKTIYcF06k/source.gif',
+              'https://thumbs.gfycat.com/PrestigiousNervousEft-size_restricted.gif',
+              'https://media0.giphy.com/media/alKwObEvul2cU/source.gif',
+              'https://i.makeagif.com/media/4-25-2014/TOrg75.gif',
+              'https://media2.giphy.com/media/VnDeUDZ87G8Ny/source.gif',
+              'https://thumbs.gfycat.com/RingedCleanImperialeagle-size_restricted.gif',
+              'https://66.media.tumblr.com/49505b43cc546e7abb4720af094072cc/tumblr_inline_oa9jfgkfF21tlyhz2_500.gifv'];
+
   var questionCounter = 0; //Tracks question number
   var selections = []; //Array containing user choices
   var quiz = $('#quiz'); //Quiz div object
@@ -106,6 +116,9 @@
     var qElement = $('<div>', {
       id: 'question'
     });
+
+    var img = $('<img src=\"'+ imgs[index] + '\"style=\"width:auto;height:150px;\">');
+    qElement.append(img);
 
     var header = $('<h2>Question ' + (index + 1) + ':</h2>');
     qElement.append(header);

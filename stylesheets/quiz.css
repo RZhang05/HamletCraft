@@ -70,14 +70,14 @@ li a:hover {
     padding-right: 5px;
     position: relative;
     float:right;
-    background-color: #DCDCDC;
-    color: black;
+    background-color: #333;
+    color: #f44336;
     margin: 0 2px 0 2px;
 }
 
 .button.active {
-    background-color: #F8F8FF;
-    color: #525252;
+    background-color:black;
+    color: white;
 }
 
 button {
@@ -87,7 +87,7 @@ button {
 
 .button a {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 #container {

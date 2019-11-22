@@ -1,6 +1,6 @@
 (function () {
   var questions = [{
-    question: "There are some personal questions in this quiz. Continue at your own will.",
+    question: "There are some personal questions in this quiz. Please press Continue to start.",
     choices: ["Continue"],
     correctAnswer: 0
   }, {
@@ -42,15 +42,15 @@
   }];
 
   var imgs = ['https://media1.giphy.com/media/4bi9ZFzHhroNrFmSsi/source.gif',
-              'https://media1.giphy.com/media/RZQIIUO9qrTRC/giphy.gif',
-              'https://media1.giphy.com/media/qVIFKTIYcF06k/source.gif',
-              'https://thumbs.gfycat.com/PrestigiousNervousEft-size_restricted.gif',
-              'https://media0.giphy.com/media/alKwObEvul2cU/source.gif',
-              'https://i.makeagif.com/media/4-25-2014/TOrg75.gif',
-              'https://media2.giphy.com/media/VnDeUDZ87G8Ny/source.gif',
-              'https://thumbs.gfycat.com/RingedCleanImperialeagle-size_restricted.gif',
-              'https://66.media.tumblr.com/49505b43cc546e7abb4720af094072cc/tumblr_inline_oa9jfgkfF21tlyhz2_500.gifv',
-              'https://media.giphy.com/media/xN0dtLv8skYMg/giphy.gif'];
+    'https://media1.giphy.com/media/RZQIIUO9qrTRC/giphy.gif',
+    'https://media1.giphy.com/media/qVIFKTIYcF06k/source.gif',
+    'https://thumbs.gfycat.com/PrestigiousNervousEft-size_restricted.gif',
+    'https://media0.giphy.com/media/alKwObEvul2cU/source.gif',
+    'https://i.makeagif.com/media/4-25-2014/TOrg75.gif',
+    'https://media2.giphy.com/media/VnDeUDZ87G8Ny/source.gif',
+    'https://thumbs.gfycat.com/RingedCleanImperialeagle-size_restricted.gif',
+    'https://66.media.tumblr.com/49505b43cc546e7abb4720af094072cc/tumblr_inline_oa9jfgkfF21tlyhz2_500.gifv',
+    'https://media.giphy.com/media/xN0dtLv8skYMg/giphy.gif'];
 
   var questionCounter = 0; //Tracks question number
   var selections = []; //Array containing user choices
@@ -118,10 +118,11 @@
       id: 'question'
     });
 
-    var img = $('<img src=\"'+ imgs[index] + '\"style=\"width:auto;height:150px;\">');
+    var img = $('<img src=\"' + imgs[index] + '\"style=\"width:auto;height:150px;\">');
     qElement.append(img);
 
-    var header = $('<h2>Question ' + (index + 1) + ':</h2>');
+    var header = $('<h2>Question ' + (index) + ':</h2>');
+    if (index == 0) header = $('<h2>Welcome to the Quiz!</h2>');
     qElement.append(header);
 
     var question = $('<p>').append(questions[index].question);
@@ -157,6 +158,7 @@
   function displayNext() {
     quiz.fadeOut(function () {
       $('#question').remove();
+      $('.wrapper').remove();
 
       if (questionCounter < questions.length) {
         var nextQuestion = createQuestionElement(questionCounter);
@@ -174,6 +176,13 @@
           $('#next').show();
         }
       } else {
+        var pyro = $('<div>', { class: 'wrapper' });
+        var title = $('<h2>You finished the quiz!</h2>');
+        quiz.append(title);
+        quiz.append(pyro);
+        for (var i = 0; i < 250; i++) {
+          create(i);
+        }
         var scoreElem = displayScore();
         quiz.append(scoreElem).fadeIn();
         $('#next').hide();
@@ -183,7 +192,6 @@
     });
   }
 
-  //CHANGE THIS HELLO THERE
   // Computes score and returns a paragraph element to be displayed
   function displayScore() {
     var score = $('<p>', { id: 'question' });
@@ -191,37 +199,37 @@
     var hamlethoratio = 0;
     var hamletgertrude = 0;
     var hamletophelia = 0;
-    
+
     //Caring
-    if(selections[1]==0) hamlethoratio++;
+    if (selections[1] == 0) hamlethoratio++;
     else hamletgertrude++;
 
     //Trust
-    if(selections[2]==0) hamlethoratio++;
-    
+    if (selections[2] == 0) hamlethoratio++;
+
     //Loyalty
-    if(selections[3]==0) hamlethoratio++;
-    
+    if (selections[3] == 0) hamlethoratio++;
+
     //Conflictual
-    if(selections[4]==0) {
+    if (selections[4] == 0) {
       hamletgertrude++;
       hamletophelia++;
     } else hamlethoratio++;
 
     //Forbidden Love
-    if(selections[5]==0) hamletgertrude++;
+    if (selections[5] == 0) hamletgertrude++;
 
     //Familial Love
-    if(selections[6]==0) hamletgertrude++;
+    if (selections[6] == 0) hamletgertrude++;
 
     //Unrealistic Expecations
-    if(selections[7]==0) hamletophelia++;
+    if (selections[7] == 0) hamletophelia++;
 
     //disapproving parents
-    if(selections[8]==0) hamletophelia++;
+    if (selections[8] == 0) hamletophelia++;
 
     //innocent relationship
-    if(selections[9]==0) {
+    if (selections[9] == 0) {
       hamlethoratio++;
       hamletophelia++;
     }
@@ -233,10 +241,55 @@
       }
     }*/
 
-    var maxi = Math.max(hamletgertrude,hamlethoratio,hamletophelia);
-    if(maxi==hamletgertrude) score.append('Your relationship is similar to that of Hamlet and Gertrude!');
-    else if(maxi==hamletophelia) score.append('Your relationship is similar to that of Hamlet and Ophelia!');
+    var maxi = Math.max(hamletgertrude, hamlethoratio, hamletophelia);
+    if (maxi == hamletgertrude) score.append('Your relationship is similar to that of Hamlet and Gertrude!');
+    else if (maxi == hamletophelia) score.append('Your relationship is similar to that of Hamlet and Ophelia!');
     else score.append('Your relationship is similar to that of Hamlet and Horatio!')
     return score;
   }
 })();
+
+function create(i) {
+  var width = Math.random() * 8;
+  var height = width * 0.4;
+  var colourIdx = Math.ceil(Math.random() * 3);
+  var colour = "red";
+  switch (colourIdx) {
+    case 1:
+      colour = "yellow";
+      break;
+    case 2:
+      colour = "blue";
+      break;
+    default:
+      colour = "red";
+  }
+  $('<div class="confetti-' + i + ' ' + colour + '"></div>').css({
+    "width": width + "px",
+    "height": height + "px",
+    "top": -Math.random() * 20 + "%",
+    "left": Math.random() * 100 + "%",
+    "opacity": Math.random() + 0.5,
+    "transform": "rotate(" + Math.random() * 360 + "deg)"
+  }).appendTo('.wrapper');
+
+  drop(i);
+}
+
+function drop(x) {
+  $('.confetti-' + x).animate({
+    top: "100%",
+    left: "+=" + Math.random() * 15 + "%"
+  }, Math.random() * 3000 + 3000, function () {
+    //reset(x);
+  });
+}
+
+function reset(x) {
+  $('.confetti-' + x).animate({
+    "top": -Math.random() * 20 + "%",
+    "left": "-=" + Math.random() * 15 + "%"
+  }, 0, function () {
+    drop(x);
+  });
+}

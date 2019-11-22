@@ -49,7 +49,8 @@
               'https://i.makeagif.com/media/4-25-2014/TOrg75.gif',
               'https://media2.giphy.com/media/VnDeUDZ87G8Ny/source.gif',
               'https://thumbs.gfycat.com/RingedCleanImperialeagle-size_restricted.gif',
-              'https://66.media.tumblr.com/49505b43cc546e7abb4720af094072cc/tumblr_inline_oa9jfgkfF21tlyhz2_500.gifv'];
+              'https://66.media.tumblr.com/49505b43cc546e7abb4720af094072cc/tumblr_inline_oa9jfgkfF21tlyhz2_500.gifv',
+              'https://media.giphy.com/media/xN0dtLv8skYMg/giphy.gif'];
 
   var questionCounter = 0; //Tracks question number
   var selections = []; //Array containing user choices

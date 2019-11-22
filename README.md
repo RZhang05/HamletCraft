@@ -1,2 +1,4 @@
 # CRAFT
-Hamlet Relationship Categorizer
+Hamlet Relationship Categorizer.
+
+**All code can be found here.**
